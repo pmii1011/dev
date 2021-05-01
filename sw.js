@@ -27,35 +27,32 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-70cf46c62b6c9512cc8b.js"
+    "url": "webpack-runtime-1d5d3cd4f99f2d1a7cab.js"
   },
   {
-    "url": "framework-a4c869fc5235f266498a.js"
+    "url": "framework-82fd92cf448c4b453dbb.js"
   },
   {
-    "url": "styles.cc31ba38b13e25f8065a.css"
+    "url": "styles.3f67799181ec716ff69c.css"
   },
   {
-    "url": "styles-84a9bc99193fe5828ffe.js"
+    "url": "b637e9a5-0d0c98428891a0cb0217.js"
   },
   {
-    "url": "b637e9a5-fbecc350bf7487bab4ed.js"
+    "url": "dc6a8720040df98778fe970bf6c000a41750d3ae-0eca73800e579784afdb.js"
   },
   {
-    "url": "dc6a8720040df98778fe970bf6c000a41750d3ae-4d99bdb91536ae08f1fc.js"
-  },
-  {
-    "url": "app-e5b3c524403fa64bb12b.js"
+    "url": "app-c7082c7272c5307bab93.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "60e4784ef082195549af92a519247b18"
+    "revision": "dcb213931ff1d808a9c24eea0e3c02d2"
   },
   {
-    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-77466cc0b3ed4dac08eb.js"
+    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-6341c7b284cee26d2b3a.js"
   },
   {
-    "url": "polyfill-365d6af0fbc55eb0b98e.js"
+    "url": "polyfill-9615494b0919047a37d5.js"
   },
   {
     "url": "manifest.webmanifest",
@@ -66,7 +63,7 @@ workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerRoute(/(\.js$|\.css$|static\/)/, new workbox.strategies.CacheFirst(), 'GET');
 workbox.routing.registerRoute(/^https?:.*\/page-data\/.*\.json/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
-workbox.routing.registerRoute(/^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
+workbox.routing.registerRoute(/^https?:.*\.(png|jpg|jpeg|webp|avif|svg|gif|tiff|js|woff|woff2|json|css)$/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
 workbox.routing.registerRoute(/^https?:\/\/fonts\.googleapis\.com\/css/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
 
 /* global importScripts, workbox, idbKeyval */
@@ -151,7 +148,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-e5b3c524403fa64bb12b.js`))) {
+  if (!resources || !(await caches.match(`/app-c7082c7272c5307bab93.js`))) {
     return await fetch(event.request)
   }
 
